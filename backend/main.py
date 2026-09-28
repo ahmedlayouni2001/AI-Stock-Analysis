@@ -1,4 +1,4 @@
-efrom dotenv import load_dotenv
+from dotenv import load_dotenv
 from pydantic import BaseModel
 
 import uvicorn
@@ -17,6 +17,13 @@ import yfinance as yf
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = ChatOpenAI(
     model = 'c1/openai/gpt-5/v-20250930',

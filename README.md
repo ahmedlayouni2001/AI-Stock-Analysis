@@ -57,4 +57,16 @@ The dev server runs on `http://localhost:3000` and proxies `/api` requests to th
 
 ## Deployment
 
-Not currently deployed.
+Backend on [Render](https://render.com), frontend on [Vercel](https://vercel.com).
+
+### Backend (Render)
+
+1. New **Web Service** → connect this GitHub repo → Render detects `render.yaml` at the repo root.
+2. Set the `OPENAI_API_KEY` env var (your Thesys C1 key) in the service's Environment settings — it's marked `sync: false` so Render will prompt for it rather than reading it from the repo.
+3. Deploy. Note the resulting URL (defaults to `https://ai-stock-analysis-backend.onrender.com` given the service name in `render.yaml`; update `frontend/vercel.json`'s rewrite destination if Render assigns a different one).
+
+### Frontend (Vercel)
+
+1. New Project → import this repo → set **Root Directory** to `frontend`.
+2. Vercel picks up `frontend/vercel.json`, which builds the Vite app and rewrites `/api/*` to the Render backend (avoids CORS issues in production).
+3. Deploy.
