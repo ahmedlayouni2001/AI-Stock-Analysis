@@ -2,6 +2,8 @@
 
 A chat-based stock analysis assistant. A FastAPI backend wraps a LangChain agent (via [Thesys C1](https://thesys.dev)) with live market-data tools, and a React frontend renders the conversation as generative UI using Thesys's C1 chat components.
 
+**Live app:** https://ai-stock-analysis-eight.vercel.app/
+
 ## Features
 
 The agent can answer questions about a stock using these tools:
@@ -58,6 +60,11 @@ The dev server runs on `http://localhost:3000` and proxies `/api` requests to th
 ## Deployment
 
 Backend on [Render](https://render.com), frontend on [Vercel](https://vercel.com).
+
+- Frontend: https://ai-stock-analysis-eight.vercel.app/
+- Backend: https://ai-stock-analysis-kw6s.onrender.com
+
+Note: the Render free tier spins down after inactivity, so the first request after idle can take 15–50s to respond.
 
 ### Backend (Render)
 
