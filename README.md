@@ -63,7 +63,7 @@ Backend on [Render](https://render.com), frontend on [Vercel](https://vercel.com
 
 1. New **Web Service** → connect this GitHub repo → Render detects `render.yaml` at the repo root.
 2. Set the `OPENAI_API_KEY` env var (your Thesys C1 key) in the service's Environment settings — it's marked `sync: false` so Render will prompt for it rather than reading it from the repo.
-3. Deploy. Note the resulting URL (defaults to `https://ai-stock-analysis-backend.onrender.com` given the service name in `render.yaml`; update `frontend/vercel.json`'s rewrite destination if Render assigns a different one).
+3. Deploy. Backend is live at `https://ai-stock-analysis-kw6s.onrender.com` (update `frontend/vercel.json`'s rewrite destination if the service is ever recreated with a different URL).
 
 ### Frontend (Vercel)
 
