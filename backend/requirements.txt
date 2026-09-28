@@ -1,0 +1,6 @@
+fastapi
+pydantic
+uvicorn 
+yfinance
+python-dotenv
+Langchain[openai]
